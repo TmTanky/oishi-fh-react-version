@@ -1,0 +1,47 @@
+.popupregister {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* align-self: center;
+    align-content: center; */
+    background-color: whitesmoke;
+    padding: 1rem;
+    margin: 6rem 12rem;
+    border-radius: 5px;
+}
+
+.papi {
+    margin: auto 1rem;
+}
+
+.popup1, .popup2 {
+    display: flex;
+}
+
+.popup1 {
+    justify-content: flex-end;
+}
+
+.popup1 button {
+    width: 30px;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.popup2 {
+    margin: auto 1rem;
+}
+
+.popup2 form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin: auto;
+}
+

@@ -1,0 +1,54 @@
+.loginbox {
+    display: flex;
+}
+
+.login1, .login2 {
+    flex: 1;
+    display: flex;
+    padding: 10rem 1rem;
+    justify-content: center;
+}
+
+.login2 h1 {
+    text-align: center;
+    margin: 1rem 0rem;
+}
+
+.login2 form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+}
+
+.login2 form input {
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    outline: none;
+}
+
+.login2 form button {
+    padding: 0.5rem 1rem;
+    margin: 1rem auto;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    width: 100px;
+}
+
+.loginbtns {
+    display: flex;
+    margin: auto;
+}
+
+.loginbtns p {
+    margin: auto 1rem;
+    font-size: 0.8rem;
+}
+
+.regisnow {
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+}
