@@ -1,0 +1,62 @@
+.allproductstitle {
+    padding: 2rem 0rem;
+    text-align: center;
+}
+
+.adminbox {
+    padding: 1rem;
+    min-height: 85vh;
+}
+
+.admindeletebox {
+    padding: 0rem 2rem;
+    margin: 1rem 0rem;
+}
+
+.admindeleteproduct {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.admindeleteprice, .admindeletebtn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.admindeleteprice p{
+    margin: auto;
+}
+
+.admindeletename {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+}
+
+.adminbox .admindeletebox button {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.adminaddbox {
+    display: flex;
+    justify-content: center;
+}
+
+.addprodbtn {
+    padding: 0.5rem 0rem;
+    margin: 1rem auto;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    width: 100px;
+}
+
+.noprods {
+    padding: 4rem 0rem;
+    text-align: center;
+}

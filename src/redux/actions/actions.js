@@ -29,3 +29,16 @@ export const loggedIn = () => {
         type: 'LOGGED_IN'
     }
 }
+
+export const successLoggedIn = (item) => {
+    return {
+        type: 'SUCCESS_LOGIN',
+        payload: item
+    }
+}
+
+export const logoutUser = () => {
+    return {
+        type: `LOGOUT_USER`
+    }
+}

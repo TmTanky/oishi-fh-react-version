@@ -13,13 +13,13 @@ import axios from 'axios'
 // Actions Redux
 import {loginOnError, loginClearError, loggedIn} from '../../redux/actions/actions'
 import {registerClearError, registerOnError} from '../../redux/actions/actions'
+import {successLoggedIn} from '../../redux/actions/actions'
 
 const LoginPage = () => {
 
     const dispatch = useDispatch()
     const isLoginError = useSelector(state => state.loginError)
     const isRegisterError = useSelector(state => state.registerError)
-    const isLoggedIn = useSelector(state => state.isLoggedIn)
 
     const [isRegister, setIsRegister] = useState(false)
     const [login, setLogin] = useState({
@@ -27,6 +27,7 @@ const LoginPage = () => {
         password: ""
     })
     const [register, setRegister] = useState({
+        name: "",
         email: "",
         password: ""
     })
@@ -39,13 +40,13 @@ const LoginPage = () => {
         e.preventDefault()
 
         try {
-            const {data} = await axios.post(`http://localhost:8000/oishi/api/v1/login`, login)
+            const info = await axios.post(`http://localhost:8000/oishi/api/v1/login`, login)
 
             dispatch(loginClearError())
             dispatch(loggedIn())
-            console.log(data)
+            dispatch(successLoggedIn(info.data.user))
+            window.localStorage.setItem('token', info.data.token)
         } catch (err) {
-            console.log(err.response.data)
             dispatch(loginOnError(err.response.data))
             setLogin({
                 email: "",
@@ -58,15 +59,16 @@ const LoginPage = () => {
         e.preventDefault()
 
         try {
-            const {data} = await axios.post(`http://localhost:8000/oishi/api/v1/signup`, register)
+            const info = await axios.post(`http://localhost:8000/oishi/api/v1/signup`, register)
 
             dispatch(registerClearError())
             dispatch(loggedIn())
-            console.log(data)
+            dispatch(successLoggedIn(info.data.user))
+            window.localStorage.setItem('token', info.data.token)
         } catch (err) {
-            console.log(err.response.data)
             dispatch(registerOnError(err.response.data))
             setRegister({
+                name: "",
                 email: "",
                 password: ""
             })

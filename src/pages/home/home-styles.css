@@ -1,0 +1,40 @@
+.prodtitle {
+    text-align: center;
+    padding: 2rem 0rem;
+    padding-bottom: 4rem;
+}
+
+.mainproductbox {
+    padding: 1rem;
+    padding-top: 0rem;
+}
+
+.productsbox {
+    display: flex;
+    justify-content: center;
+}
+
+.product form {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEEE;
+    border-radius: 5px;
+}
+
+.product form button {
+    padding: 0.5rem;
+    margin: 1rem auto;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    width: 100px;
+}
+
+.product img {
+    width: 70%;
+    text-align: center;
+}

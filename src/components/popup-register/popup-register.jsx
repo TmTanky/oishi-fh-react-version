@@ -10,7 +10,7 @@ const PopUpRegister = ({trigger, closeform, register, handleChangeRegister, hand
 
     return (trigger) ? (
         <div className="popupregister">
-            {/* <div className="papi"> */}
+            
             <div className="popup1">
                 <button onClick={closeform}> X </button>
             </div>
@@ -19,9 +19,9 @@ const PopUpRegister = ({trigger, closeform, register, handleChangeRegister, hand
                 <form onSubmit={handleRegister}>
                     <h1> Register </h1>
                     {isRegisterError ? isRegisterError.error.map(error => {
-                        console.log(error.error.msg)
                         return <p key={error.error.msg} style={{color: `red`}}> {error.error.msg} </p>
                     }) : "" }
+                    <input type="text" name="name" placeholder="Name" value={register.name} onChange={handleChangeRegister} />
                     <input type="email" name="email" placeholder="Email" value={register.email} onChange={handleChangeRegister} />
                     <input type="password" name="password" placeholder="Password" value={register.password} onChange={handleChangeRegister} />
                     <button type="submit"> Register </button>

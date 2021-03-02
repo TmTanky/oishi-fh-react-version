@@ -1,0 +1,62 @@
+.popupaddproduct {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: whitesmoke;
+    padding: 1rem;
+    margin: 6rem 12rem;
+    border-radius: 5px;
+}
+
+.popupadd1, .popupadd2 {
+    display: flex;
+}
+
+.popupadd1 {
+    justify-content: flex-end;
+}
+
+.popupadd1 button {
+    width: 30px;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.popupadd2 {
+    margin: auto 1rem;
+}
+
+.popupadd2 h1 {
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+.popupadd2 form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin: auto;
+    width: 70%;
+}
+
+.popupadd2 form input {
+    margin: 0.3rem 0rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.popupadd2 form button {
+    padding: 0.3rem 0.2rem;
+    margin: 1rem auto;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    width: 100px;
+}

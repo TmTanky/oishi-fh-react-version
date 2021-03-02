@@ -1,9 +1,21 @@
 import React from 'react' 
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import {Link} from 'react-router-dom'
+
+// Actions Redux
+import {logoutUser, loggedIn} from '../../redux/actions/actions'
 
 const Header = () => {
 
+    const dispatch = useDispatch()
     const isLoggedIn = useSelector(state => state.isLoggedIn)
+    const isAdmin = useSelector(state => state.user)
+
+    const handleLogout = () => {
+      dispatch(logoutUser())
+      dispatch(loggedIn())
+      window.localStorage.removeItem('token')
+    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,22 +27,23 @@ const Header = () => {
     <div className="collapse navbar-collapse" id="navbarNavDropdown">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+          <Link className="nav-link active" aria-current="page" to="/"> Home </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#"> Contact </a>
+          <Link className="nav-link active" aria-current="page" to="/contact"> Contact </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#"> About </a>
+          <Link className="nav-link active" aria-current="page" to="/about"> About </Link>
         </li>
     { isLoggedIn ? <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Options
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a className="dropdown-item" href="#">Edit Profile</a></li>
-            <li><a className="dropdown-item" href="#">Carts</a></li>
-            <li><a className="dropdown-item" href="#">Logout</a></li>
+            {isAdmin.user.isAdmin ? 
+              <li><Link className="dropdown-item" to="/adminpanel">Admin Panel</Link></li>
+            : <li><a className="dropdown-item" href="#"> Carts </a></li> }
+            <li><a className="dropdown-item" href="#" onClick={handleLogout}>Logout</a></li>
           </ul>
         </li> : "" }
       </ul>
@@ -39,5 +52,6 @@ const Header = () => {
 </nav>
     )
 }
+
 
 export default Header

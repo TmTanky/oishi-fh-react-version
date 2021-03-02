@@ -1,5 +1,6 @@
 import React from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 // CSS
 import './App.css';
@@ -10,14 +11,26 @@ import Footer from './components/footer/footer'
 
 // Pages
 import LoginPage from './pages/login/login'
+import ContactPage from './pages/contact/contact'
+import AboutPage from './pages/about/about'
+import HomePage from './pages/home/home'
+import AdminPanelPage from './pages/admin/deleteproduct/admin-panel'
 
-function App() {
+const App = () => {
+
+  const isLoggedIn = useSelector(state => state.isLoggedIn)
+  const isAdmin = useSelector(state => state.user)
+
   return (
     <div className="App">
       <BrowserRouter>
         <Header/>
           <Switch>
-            <Route exact path="/" component={LoginPage} />
+            <Route exact path="/" render={() => isLoggedIn? <Redirect to="/home"/> : <LoginPage/> }/>
+            <Route exact path="/contact" component={ContactPage} />
+            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/home" render={() => isLoggedIn? <HomePage/> : <LoginPage/> } />
+            <Route exact path="/adminpanel" render={() => isAdmin.user.isAdmin? <AdminPanelPage/> : <Redirect to="/home"/> } />
           </Switch>
         <Footer/>
       </BrowserRouter>
