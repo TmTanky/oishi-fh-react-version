@@ -1,11 +1,12 @@
 import {createStore} from 'redux'
+import {persistStore} from 'redux-persist'
 
 // Root Reducer
 import rootReducer from '../reducers/root-reducer'
 
-const store = createStore(
+export const store = createStore(
     rootReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
-export default store
+export const persistor = persistStore(store)

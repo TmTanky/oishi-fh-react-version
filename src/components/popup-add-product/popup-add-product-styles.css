@@ -60,3 +60,19 @@
     color: white;
     width: 100px;
 }
+
+@media screen and (max-width: 800px) {
+    .popupaddproduct {
+        margin: 6rem 4rem;
+    }
+
+    .popupadd2 form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .popupaddproduct {
+        margin: 6rem 1rem;
+    }
+}

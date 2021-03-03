@@ -42,3 +42,23 @@ export const logoutUser = () => {
         type: `LOGOUT_USER`
     }
 }
+
+export const addItem = (item) => {
+    return {
+        type: 'ADD_ITEM',
+        payload: item
+    }
+}
+
+export const removeItem = (item) => {
+    return {
+        type: 'REMOVE_ITEM',
+        payload: item
+    }
+}
+
+export const logoutClearCart = () => {
+    return {
+        type: 'LOGOUT_CLEAR_CARTS'
+    }
+}

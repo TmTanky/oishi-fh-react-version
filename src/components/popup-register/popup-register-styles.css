@@ -45,3 +45,15 @@
     margin: auto;
 }
 
+@media screen and (max-width: 800px) {
+    .popupregister {
+        margin: 6rem 4rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .popupregister {
+        margin: 6rem 1rem;
+    }
+}
+

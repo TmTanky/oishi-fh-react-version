@@ -1,0 +1,68 @@
+.itemrootbox {
+    min-height: 85vh;
+}
+
+.itemrootbox h1 {
+    padding: 5rem 0rem;
+    text-align: center;
+}
+
+.itembox {
+    display: flex;
+    margin: auto 6rem;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 0.5rem;
+}
+
+.itemprice, .itemqty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.itemname {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.itemname h5 {
+    font-size: 1rem;
+    margin: auto 0.1rem;
+}
+
+.itemprice p {
+    margin: auto;
+}
+
+.itemqty p {
+    margin: auto;
+}
+
+.itemdelete {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+}
+
+.itemdelete button {
+    width: 100px;
+    background: none;
+    outline: none;
+    border: none;
+    margin: auto;
+}
+
+.noitems {
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .itembox {
+        margin: auto 0rem;
+    }
+}

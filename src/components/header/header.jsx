@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 // Actions Redux
-import {logoutUser, loggedIn} from '../../redux/actions/actions'
+import {logoutUser, loggedIn, logoutClearCart} from '../../redux/actions/actions'
 
 const Header = () => {
 
@@ -12,6 +12,7 @@ const Header = () => {
     const isAdmin = useSelector(state => state.user)
 
     const handleLogout = () => {
+      dispatch(logoutClearCart())
       dispatch(logoutUser())
       dispatch(loggedIn())
       window.localStorage.removeItem('token')
@@ -20,7 +21,7 @@ const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#"> Oishi FoodHub </a>
+    <Link className="navbar-brand" to="/"> Oishi FoodHub </Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -42,8 +43,8 @@ const Header = () => {
           <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             {isAdmin.user.isAdmin ? 
               <li><Link className="dropdown-item" to="/adminpanel">Admin Panel</Link></li>
-            : <li><a className="dropdown-item" href="#"> Carts </a></li> }
-            <li><a className="dropdown-item" href="#" onClick={handleLogout}>Logout</a></li>
+            : <li><Link className="dropdown-item" to="/carts"> Carts </Link></li> }
+            <li><a className="dropdown-item" onClick={handleLogout}>Logout</a></li>
           </ul>
         </li> : "" }
       </ul>

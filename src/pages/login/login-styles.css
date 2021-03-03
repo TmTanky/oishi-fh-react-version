@@ -1,5 +1,6 @@
 .loginbox {
     display: flex;
+    min-height: 85vh;
 }
 
 .login1, .login2 {
@@ -51,4 +52,24 @@
     text-decoration: underline;
     cursor: pointer;
     color: blue;
+}
+
+@media screen and (max-width: 800px) {
+    .loginbox {
+        flex-direction: column;
+    }
+
+    .login1 {
+        padding: 0;
+        padding-top: 5rem;
+    }
+
+    .login2 {
+        padding: 0;
+        /* padding: 5rem 1rem 10rem 1rem; */
+    }
+
+    .login2 form {
+        width: 90%;
+    }
 }

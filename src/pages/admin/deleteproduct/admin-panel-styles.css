@@ -4,7 +4,7 @@
 }
 
 .adminbox {
-    padding: 1rem;
+    padding: 5rem 1rem;
     min-height: 85vh;
 }
 
@@ -33,6 +33,11 @@
     flex: 1;
     display: flex;
     justify-content: left;
+    margin: auto;
+}
+
+.admindeletename h1 {
+    margin: auto 0.1rem;
 }
 
 .adminbox .admindeletebox button {
@@ -59,4 +64,10 @@
 .noprods {
     padding: 4rem 0rem;
     text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+    .admindeletename h1 {
+        font-size: 1rem;
+    }
 }
