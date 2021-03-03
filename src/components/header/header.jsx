@@ -37,14 +37,16 @@ const Header = () => {
           <Link className="nav-link active" aria-current="page" to="/about"> About </Link>
         </li>
     { isLoggedIn ? <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" to="#" data-bs-toggle="dropdown" aria-expanded="false" onClick={() => {
+            return null
+          }}>
             Options
-          </a>
+          </Link>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             {isAdmin.user.isAdmin ? 
               <li><Link className="dropdown-item" to="/adminpanel">Admin Panel</Link></li>
             : <li><Link className="dropdown-item" to="/carts"> Carts </Link></li> }
-            <li><a className="dropdown-item" onClick={handleLogout}>Logout</a></li>
+            <li><Link className="dropdown-item" onClick={handleLogout}>Logout</Link></li>
           </ul>
         </li> : "" }
       </ul>

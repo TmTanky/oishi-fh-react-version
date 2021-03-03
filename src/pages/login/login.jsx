@@ -40,7 +40,7 @@ const LoginPage = () => {
         e.preventDefault()
 
         try {
-            const info = await axios.post(`http://localhost:8000/oishi/api/v1/login`, login)
+            const info = await axios.post(`https://oishi-fh-api-react.herokuapp.com/oishi/api/v1/login`, login)
 
             dispatch(loginClearError())
             dispatch(loggedIn())
@@ -59,7 +59,7 @@ const LoginPage = () => {
         e.preventDefault()
 
         try {
-            const info = await axios.post(`http://localhost:8000/oishi/api/v1/signup`, register)
+            const info = await axios.post(`https://oishi-fh-api-react.herokuapp.com/oishi/api/v1/signup`, register)
 
             dispatch(registerClearError())
             dispatch(loggedIn())

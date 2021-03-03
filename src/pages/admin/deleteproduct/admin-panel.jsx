@@ -57,7 +57,7 @@ const AdminPanelPage = () => {
         const source = axios.CancelToken.source()
 
         const getProducts = () => { 
-            axios.get(`http://localhost:8000/oishi/api/v1/getproductsall`, { cancelToken: source.token }).then((response) => {
+            axios.get(`https://oishi-fh-api-react.herokuapp.com/oishi/api/v1/getproductsall`, { cancelToken: source.token }).then((response) => {
                 setProducts(response.data.data)
             }).catch(err => {
                 return 
@@ -83,7 +83,7 @@ const AdminPanelPage = () => {
                         </div>
 
                         <div className="admindeletebtn">
-                            <button onClick={ async () => await axios.delete(`http://localhost:8000/oishi/api/v1/deleteproduct/${product._id}`)}> <strong> X </strong> </button>
+                            <button onClick={ async () => await axios.delete(`https://oishi-fh-api-react.herokuapp.com/oishi/api/v1/deleteproduct/${product._id}`)}> <strong> X </strong> </button>
                         </div>
                     </div>
                 </div>
