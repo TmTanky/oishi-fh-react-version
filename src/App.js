@@ -29,6 +29,7 @@ const App = () => {
         <Header/>
           <Switch>
             <Route exact path="/" render={() => isLoggedIn? <Redirect to="/home"/> : <LoginPage/> }/>
+            <Route exact path="/login" component={LoginPage} />
             <Route exact path="/contact" component={ContactPage} />
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/home" render={() => isLoggedIn? <HomePage/> : <LoginPage/> } />

@@ -1,6 +1,6 @@
 import React from 'react' 
 import {useSelector, useDispatch} from 'react-redux'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 // Actions Redux
 import {logoutUser, loggedIn, logoutClearCart} from '../../redux/actions/actions'
@@ -8,6 +8,7 @@ import {logoutUser, loggedIn, logoutClearCart} from '../../redux/actions/actions
 const Header = () => {
 
     const dispatch = useDispatch()
+    const history = useHistory()
     const isLoggedIn = useSelector(state => state.isLoggedIn)
     const isAdmin = useSelector(state => state.user)
 
@@ -16,6 +17,7 @@ const Header = () => {
       dispatch(logoutUser())
       dispatch(loggedIn())
       window.localStorage.removeItem('token')
+      history.push('/login')
     }
 
     return (
