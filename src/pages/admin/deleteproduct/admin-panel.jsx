@@ -22,11 +22,11 @@ const AdminPanelPage = () => {
         error: []
     })
 
-    const handleAddProduct =  async e => {
+    const handleAddProduct = async e => {
         e.preventDefault()
 
         try {
-            await axios.post(`http://localhost:8000/oishi/api/v1/addproduct`, addProduct)
+            await axios.post(`https://oishi-fh-api-react.herokuapp.com/oishi/api/v1/addproduct`, addProduct)
         } catch (err) {
             setIsError({error: [err.response.data]})
         }

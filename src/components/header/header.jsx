@@ -46,7 +46,7 @@ const Header = () => {
             {isAdmin.user.isAdmin ? 
               <li><Link className="dropdown-item" to="/adminpanel">Admin Panel</Link></li>
             : <li><Link className="dropdown-item" to="/carts"> Carts </Link></li> }
-            <li><Link className="dropdown-item" onClick={handleLogout}>Logout</Link></li>
+            <li><Link className="dropdown-item" to="#" onClick={handleLogout}>Logout</Link></li>
           </ul>
         </li> : "" }
       </ul>

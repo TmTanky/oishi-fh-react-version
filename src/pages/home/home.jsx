@@ -28,18 +28,17 @@ const HomePage = () => {
 
     useEffect(() => {
 
-        const source = axios.CancelToken.source()
-
-        const getProducts = () => { 
-            axios.get(`https://oishi-fh-api-react.herokuapp.com/oishi/api/v1/getproductsall`, { cancelToken: source.token }).then((response) => {
-                setProducts(response.data.data)
-            }).catch(err => {
+        const getProducts = async () => { 
+            try {
+                const info = await axios.get(`https://oishi-fh-api-react.herokuapp.com/oishi/api/v1/getproductsall`)
+                setProducts(info.data.data)
+            } catch (err) {
                 console.log(err)
-            }) 
+            }
         }
         getProducts()
-        return () => source.cancel()
-    })
+
+    }, [])
 
     let {url} = useRouteMatch()
 
