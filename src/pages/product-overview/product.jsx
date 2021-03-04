@@ -14,7 +14,7 @@ const ProductOverviewPage = () => {
         const source = axios.CancelToken.source()
 
         const getProduct = () => { 
-            axios.get(`http://localhost:8000/oishi/api/v1/getoneproduct/${productid}`, { cancelToken: source.token }).then((response) => {
+            axios.get(`https://oishi-fh-api-react.herokuapp.com/oishi/api/v1/getoneproduct/${productid}`, { cancelToken: source.token }).then((response) => {
                 setProduct(response.data.data)
             }).catch(err => {
                 console.log(err)

@@ -1,4 +1,5 @@
 .oneproductbox {
+    min-height: 85vh;
     padding: 10rem 2rem;
 }
 
@@ -9,4 +10,11 @@
 
 .oneproductbox p {
     font-size: 1.5rem;
+}
+
+@media screen and (max-width: 500px) {
+    .oneproductbox h1 {
+        font-size: 2rem;
+        margin: 1rem 0rem;
+    }
 }
