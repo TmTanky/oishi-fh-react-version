@@ -17,7 +17,7 @@ const Header = () => {
       dispatch(logoutUser())
       dispatch(loggedIn())
       window.localStorage.removeItem('token')
-      history.push('/login')
+      history.push('/')
     }
 
     return (
